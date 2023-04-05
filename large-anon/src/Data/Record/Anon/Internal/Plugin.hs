@@ -22,8 +22,8 @@ plugin :: GHC.Plugins.Plugin
 plugin = GHC.Plugins.defaultPlugin {
       GHC.Plugins.tcPlugin = \_args -> Just $
         mkTcPlugin tcPlugin
-    , GHC.Plugins.parsedResultAction = \args _modSummary ->
-        ignoreMessages $ sourcePlugin args
+    , GHC.Plugins.parsedResultAction = \args _modSummary -> undefined
+        -- ignoreMessages $ sourcePlugin args
     , GHC.Plugins.pluginRecompile =
         GHC.Plugins.purePlugin
     }
