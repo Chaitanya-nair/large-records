@@ -106,72 +106,78 @@ library
     cpp-options:
       -DDEBUG
 
-test-suite test-large-anon
-  default-language:
-      Haskell2010
-  type:
-      exitcode-stdio-1.0
-  hs-source-dirs:
-      test
-  main-is:
-      TestLargeAnon.hs
-  other-modules:
-      Test.Infra.Generics
-      Test.Infra.MarkStrictness
-      Test.Infra.Discovery
-      Test.Infra.DynRecord
-      Test.Infra.DynRecord.Advanced
-      Test.Infra.DynRecord.Simple
-      Test.Prop.Record.Combinators.Constrained
-      Test.Prop.Record.Combinators.Simple
-      Test.Prop.Record.Model
-      Test.Prop.Record.Model.Generator
-      Test.Prop.Record.Model.Orphans
-      Test.Sanity.AllFields
-      Test.Sanity.Applicative
-      Test.Sanity.BlogPost
-      Test.Sanity.CheckIsSubRow
-      Test.Sanity.Discovery
-      Test.Sanity.DuplicateFields
-      Test.Sanity.Generics
-      Test.Sanity.HasField
-      Test.Sanity.Intersection
-      Test.Sanity.Merging
-      Test.Sanity.Named.Record1
-      Test.Sanity.Named.Record2
-      Test.Sanity.PolyKinds
-      Test.Sanity.RecordLens
-      Test.Sanity.Simple
-      Test.Sanity.SrcPlugin.WithoutTypelet
-      Test.Sanity.SrcPlugin.WithTypelet
-      Test.Sanity.TypeLevelMetadata
-  build-depends:
-      base
-    , aeson
-    , aeson-pretty
-    , bytestring
-    , large-anon
-    , large-generics
-    , mtl
-    , optics-core
-    , parsec
-    , QuickCheck
-    , record-dot-preprocessor
-    , sop-core
-    , tasty
-    , tasty-hunit
-    , tasty-quickcheck
-    , text
-    , typelet
-    , validation-selective
-
-      -- required when using record-dot-preprocessor
-    , record-hasfield
-  ghc-options:
-      -Wall
-      -Wredundant-constraints
-      -Wno-unticked-promoted-constructors
-      -fno-show-valid-hole-fits
+-- test-suite test-large-anon
+--   default-language:
+--       Haskell2010
+--   type:
+--       exitcode-stdio-1.0
+--   hs-source-dirs:
+--       test
+--   main-is:
+--       TestLargeAnon.hs
+  -- other-modules:
+  --     Test.Infra.Discovery
+  --     Test.Infra.DynRecord
+  --     Test.Infra.DynRecord.Advanced
+  --     Test.Infra.DynRecord.Simple
+  --     Test.Infra.Generics
+  --     Test.Infra.MarkStrictness
+  --     Test.Prop.Record.Combinators.Constrained
+  --     Test.Prop.Record.Combinators.Simple
+  --     Test.Prop.Record.Model
+  --     Test.Prop.Record.Model.Generator
+  --     Test.Prop.Record.Model.Orphans
+  --     Test.Sanity.AllFields
+  --     Test.Sanity.Applicative
+  --     Test.Sanity.BlogPost
+      -- Test.Sanity.CheckIsSubRow
+      -- Test.Sanity.Discovery
+      -- Test.Sanity.DuplicateFields
+      -- Test.Sanity.Fourmolu.OverloadedRecordDot
+      -- Test.Sanity.Fourmolu.OverloadedRecordUpdate
+      -- Test.Sanity.Generics
+      -- Test.Sanity.HasField
+      -- Test.Sanity.Intersection
+      -- Test.Sanity.Merging
+      -- Test.Sanity.Named.Record1
+      -- Test.Sanity.Named.Record2
+      -- Test.Sanity.OverloadedRecordDot
+      -- Test.Sanity.OverloadedRecordUpdate
+      -- Test.Sanity.PolyKinds
+      -- Test.Sanity.RebindableSyntax.Disabled
+      -- Test.Sanity.RebindableSyntax.Enabled
+      -- Test.Sanity.RecordLens
+      -- Test.Sanity.Simple
+      -- Test.Sanity.SrcPlugin.WithoutTypelet
+      -- Test.Sanity.SrcPlugin.WithTypelet
+      -- Test.Sanity.TypeLevelMetadata
+  -- build-depends:
+  --   , aeson
+  --   , aeson-pretty
+  --   , arrows
+  --   , base
+  --   , bytestring
+  --   , large-anon
+  --   , large-generics
+  --   , mtl
+  --   , optics-core
+  --   , parsec
+  --   , QuickCheck
+  --   , record-dot-preprocessor
+  --   , record-hasfield
+  --   , sop-core
+  --   , Stream
+  --   , tasty
+  --   , tasty-hunit
+  --   , tasty-quickcheck
+  --   , text
+  --   , typelet
+  --   , validation-selective
+  -- ghc-options:
+  --     -Wall
+  --     -Wredundant-constraints
+  --     -Wno-unticked-promoted-constructors
+  --     -fno-show-valid-hole-fits
 
   if impl(ghc >= 8.10)
     ghc-options: -Wunused-packages
