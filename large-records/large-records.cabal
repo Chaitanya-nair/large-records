@@ -58,7 +58,7 @@ library
     , transformers >= 0.5.6 && < 0.7
 
       -- 0.2.16 introduces support for ghc 9.4
-    , record-dot-preprocessor >= 0.2.16 && < 0.3
+    , record-dot-preprocessor
 
       -- whatever versions are bundled with ghc
     , ghc
